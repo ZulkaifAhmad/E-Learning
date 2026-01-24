@@ -1,0 +1,117 @@
+.comp-button {
+  padding: 10px 20px;
+  border-radius: 30px;
+}
+
+.Home {
+  min-height: 500px;
+  box-sizing: border-box;
+}
+.main {
+  clip-path: ellipse(150% 100% at 50% 0%);
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1vw;
+  padding: 10px 50px;
+  background-color: #49bbbd;
+}
+
+.text-part {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2vw;
+  padding: 50px 20px;
+}
+.text-part span {
+  color: #ddbd3e;
+}
+.text-part h1 {
+  font-weight: 600;
+  color: white;
+  line-height: 20px;
+  padding: 0vw;
+  margin: 0%;
+}
+.text-part p {
+  color: white;
+}
+
+.picture-part {
+  height: 100%;
+  width: 50%;
+  position: relative;
+}
+.picture-part img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.notification {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #dbf1f2;
+}
+.notify {
+  position: absolute;
+  top: 30%;
+  left: 50px;
+}
+.icon {
+  background-color: rgba(0, 0, 255, 0.552);
+  padding: 5px;
+  border-radius: 10px;
+}
+#div strong {
+  padding: 0vw;
+  margin: 0%;
+  font-size: 14px;
+}
+#div p {
+  padding: 0%;
+  font-size: 14px;
+}
+.email {
+  position: absolute;
+  bottom: 30%;
+  right: 50px;
+}
+.check {
+  position: absolute;
+  bottom: 20%;
+  left: 50px;
+}
+
+/* Success-Store Homepage */
+
+.success-story {
+  min-height: 400px;
+}
+.success-story .heading {
+  margin-top: 30px;
+  font-weight: 500;
+}
+.success-story div > p {
+  margin-top: 10px;
+}
+.rappe_success_count {
+  margin-top: 3vw;
+  flex-wrap: wrap;
+}
+.success_count {
+  background: linear-gradient(
+    to right,
+    #1d4ed8,
+    #3b83f6b2
+  );
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}

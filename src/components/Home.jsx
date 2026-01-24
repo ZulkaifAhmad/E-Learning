@@ -1,8 +1,18 @@
-import React from 'react'
+import "../App.css"
+import Main from "./comps/main.jsx"
+import Success from "./comps/Success.jsx"
+
 
 function Home() {
   return (
-    <div>Home</div>
+    <>
+      <div className="Home">
+      <Main />
+      <Success />
+      
+
+      </div>
+    </>
   )
 }
 
