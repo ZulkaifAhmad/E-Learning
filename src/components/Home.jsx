@@ -1,6 +1,7 @@
 import "../App.css"
 import Main from "./comps/main.jsx"
 import Success from "./comps/Success.jsx"
+import Tools from "./comps/tools.jsx"
 
 
 function Home() {
@@ -9,7 +10,7 @@ function Home() {
       <div className="Home">
       <Main />
       <Success />
-      
+      <Tools />
 
       </div>
     </>

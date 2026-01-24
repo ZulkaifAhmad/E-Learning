@@ -61,7 +61,7 @@
 .notify {
   position: absolute;
   top: 30%;
-  left: 50px;
+  left: 80px;
 }
 .icon {
   background-color: rgba(0, 0, 255, 0.552);
@@ -90,9 +90,6 @@
 
 /* Success-Store Homepage */
 
-.success-story {
-  min-height: 400px;
-}
 .success-story .heading {
   margin-top: 30px;
   font-weight: 500;
@@ -105,13 +102,102 @@
   flex-wrap: wrap;
 }
 .success_count {
-  background: linear-gradient(
-    to right,
-    #1d4ed8,
-    #3b83f6b2
-  );
-  -webkit-background-clip: text; 
+  background: linear-gradient(to right, #1d4ed8, #3b83f6b2);
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+}
+
+/* Tools homepage comp-design */
+
+.Tools {
+  padding: 100px 50px;
+}
+.Tools h1 {
+  font-weight: 600;
+}
+.Tools .raperP {
+  margin-top: 10px;
+}
+.tools-card {
+  padding: 40px 20px 10px 20px;
+  min-height: 250px;
+  background-color: white;
+  display: flex;
+  margin-top: 90px;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  cursor: pointer;
+  gap: 1vw;
+  position: relative;
+  box-shadow: -1px 4px 7px rgba(75, 24, 24, 0.107);
+  width: 300px;
+  border-radius: 20px;
+}
+.tools-card:hover {
+  box-shadow: -1px 4px 7px rgba(75, 24, 24, 0.394);
+}
+
+.tools-card strong {
+  color: #2f327d;
+}
+.tools-card span {
+  background-color: #5b72ee;
+  padding: 15px;
+  position: absolute;
+  top: -13%;
+  right: 45%;
+  border-radius: 50%;
+}
+
+
+
+/* what - in tools-component-of-home */
+.what-rapper{
+  margin-top: 45px;
+}
+.what{
+  margin-top: 8vw;
+}
+.what .P-div{
+  margin-top: 15px;
+}
+.what_card{
+  width: 380px;
+  height: 260px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+}
+.what_card img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.what_card .textPart{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.233);
+}
+.textPart button{
+  border-radius: 30px;
+  border: 1px solid white;
+  padding: 10px 20px;
+  color: white;
+  font-size: 16px; cursor: pointer;
+  font-weight: 500;
+}
+.textPart button:active{
+  color: #ddbd3e;
 }
