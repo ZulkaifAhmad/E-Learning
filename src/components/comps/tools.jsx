@@ -1,15 +1,14 @@
 import { Calendar, Newspaper, UsersRound } from "lucide-react";
 import "../../App.css";
 import { assets } from "../../assets/assets";
-import Button from "./button";
 
 function Tools() {
   return (
     <div className="Tools">
-      <h1 className="text-4xl text-center">All-In-One Cloud Software.</h1>
+      <h1 className="text-3xl text-center">All-In-One Cloud Software.</h1>
 
       <div className="raperP flex justify-center items-center">
-        <p className="text-center w-1/2 mt-4 text-base">
+        <p className="text-center w-1/2 mt-4 text-base tracking-wide">
           TOTC is one powerful online software suite that combines all the tools
           needed to run a successful school or office.
         </p>
@@ -20,7 +19,7 @@ function Tools() {
           <span>
             <Newspaper size={20} color="white" />
           </span>
-          <strong className="text-center text-lg">
+          <strong className="text-center text-xl">
             Online Billing, Invoicing, & Contracts
           </strong>
           <p className="text-center text-base">
@@ -29,11 +28,11 @@ function Tools() {
           </p>
         </div>
 
-        <div className="tools-card">
+        <div className="tools-card greens">
           <span>
             <Calendar size={20} color="white" />
           </span>
-          <strong className="text-center text-lg">
+          <strong className="text-center text-xl">
             Easy Scheduling & Attendance Tracking
           </strong>
           <p className="text-center text-base">
@@ -46,7 +45,7 @@ function Tools() {
           <span>
             <UsersRound size={20} color="white" />
           </span>
-          <strong className="text-center text-lg">Customer Tracking</strong>
+          <strong className="text-center text-xl">Customer Tracking</strong>
           <p className="text-center text-base">
             Automate and track emails to individuals or groups. Skilline’s
             built-in system helps organize your organization{" "}
@@ -55,9 +54,9 @@ function Tools() {
       </div>
 
       <div className="what">
-        <h1 className="text-center text-4xl">What is TOTC?</h1>
+        <h1 className="text-center text-3xl">What is TOTC?</h1>
         <div className="P-div w-full flex justify-center items-center">
-          <p className="w-2/3 text-base text-center">
+          <p className="w-2/3 text-center tracking-wide">
             TOTC is a platform that allows educators to create online classes
             whereby they can store the course materials online; manage
             assignments, quizzes and exams; monitor due dates; grade results and

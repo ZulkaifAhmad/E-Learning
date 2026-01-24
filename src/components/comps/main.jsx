@@ -7,9 +7,9 @@ function Main() {
   return (
     <div className="main">
           <div className="parts text-part">
-            <h1 className="text-4xl"><span>Studing</span> Online is now</h1>
-            <h1 className="text-4xl">much easier</h1>
-            <p className="text-base tracking-wide">TOTC is an interesting platform that will teach you in more an interactive way</p>
+            <h1 className="text-5xl"><span>Studing</span> Online is now</h1>
+            <h1 className="text-5xl">much easier</h1>
+            <p className="text-base w-3/4 tracking-wide">TOTC is an interesting platform that will teach you in more an interactive way</p>
             <Button text="Join for free"/>
           </div>
 

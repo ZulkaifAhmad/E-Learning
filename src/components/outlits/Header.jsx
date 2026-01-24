@@ -31,7 +31,7 @@ function Header() {
             key={index}
             to={navigation.path}
             className={({ isActive }) =>
-              `tracking-wide ${isActive && "text-amber-300 border-b-2 border-amber-200"}`
+              `tracking-wide ${isActive && " border-b-2 border-b-emerald-300"}`
             }
           >
             {navigation.name}
@@ -41,7 +41,7 @@ function Header() {
       <div className="menu_buttons flex justify-center items-center gap-4">
         <button
           type="button"
-          className="cursor-pointer bg-white rounded text-black active:text-amber-300"
+          className="cursor-pointer bg-white rounded text-black active:text-teal-300"
           onClick={() => navigation("/signup", { replace: true })}
         >
           Signup
@@ -49,7 +49,7 @@ function Header() {
 
         <button
           type="button"
-          className="cursor-pointer rounded bg-[#7fcecf] text-white active:text-amber-300"
+          className="cursor-pointer rounded bg-[#7fcecf] text-white active:text-teal-300"
           onClick={() => navigation("/login", { replace: true })}
         >
           Login
