@@ -428,7 +428,7 @@
   padding: 80px 20px;
   max-width: 1200px;
   margin: 0 auto;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
 }
 
 .features-header {
@@ -556,4 +556,65 @@
 }
 .feature-right-two .boxes span{
   padding: 17px;
+}
+
+
+
+
+
+/* Related - component of HOme page  */
+
+
+.Related{
+  padding: 5px 120px;
+}
+.related-text-part #heading-span{
+  color: #00CBB8;
+}
+.related-text-part h2{
+  font-weight: 600;
+}
+.related-text-part p{
+  margin-top: 15px;
+  color: #696984;
+  width: 90%;
+}
+
+.related-image-part #related_image{
+  width: 50%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top;
+  position: relative;
+  z-index: 1;
+}
+/* .related-dots{
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  background-color: lightcoral;
+  top: 80px;
+  z-index: 0;
+  transform: rotate(-10deg);
+} */
+.related-dots {
+  width: 400px;
+  height: 260px;
+  position: absolute;
+  top: 80px;
+  z-index: 0;
+
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 12px;
+
+  padding: 20px;
+  transform: rotate(-10deg);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00CBB8;
+  border-radius: 50%;
 }

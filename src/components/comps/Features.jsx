@@ -1,10 +1,11 @@
 import { Copy, Users, WindIcon } from "lucide-react";
 import "../../App.css";
 import { assets } from "../../assets/assets.js";
+import Circle from "./circle.jsx";
 
 const Features = () => {
   return (
-    <section className="features-section">
+    <section className="features-section relative">
       <div className="features-header">
         <h2 className="section-title">
           Our <span className="text-teal">Features</span>
@@ -14,6 +15,19 @@ const Features = () => {
           efficient
         </p>
       </div>
+
+          <div className="absolute top-45 left-10">
+            <Circle bg="bg-blue-300" w="100px" />
+          </div>
+          <div className="absolute top-40 left-36">
+            <Circle bg="bg-green-300" w="30px" />
+          </div>
+          <div className="absolute bottom-15 left-100">
+            <Circle bg="bg-green-300" w="100px" />
+          </div>
+          <div className="absolute bottom-10 left-90">
+            <Circle bg="bg-red-300" w="40px" />
+          </div>
 
       <div className="rape-features flex justify-between items-center">
         <div className="left w-2/3 h-102 rounded-2xl relative overflow-hidden">
@@ -75,12 +89,12 @@ const Features = () => {
           </div>
         </div>
         <div className="feature-right-two w-1/3 h-102">
-          <h1 className="text-3xl">
+          <h1 className="text-2xl">
             A <span>user interface</span> designed for the classroom
           </h1>
           <div className="boxes flex justify-start items-center gap-6">
             <span className="rounded-4xl bg-gray-300">
-            <WindIcon size={20} color="black"/>
+              <WindIcon size={20} color="black" />
             </span>
             <p>
               Teachers do not get lost in the grid view and have a dedicated
@@ -89,15 +103,13 @@ const Features = () => {
           </div>
           <div className="boxes flex justify-start items-center gap-6">
             <span className="rounded-4xl bg-emerald-300">
-            <Copy size={20} color="white"/>
+              <Copy size={20} color="white" />
             </span>
-            <p>
-              TA is and presenters can be moved to the front of the class.
-            </p>
+            <p>TA is and presenters can be moved to the front of the class.</p>
           </div>
           <div className="boxes flex justify-start items-center gap-6">
             <span className="rounded-4xl bg-amber-300">
-            <Users size={20} color="blue"/>
+              <Users size={20} color="blue" />
             </span>
             <p>
               Teachers can easily see all students and class data at one time.
