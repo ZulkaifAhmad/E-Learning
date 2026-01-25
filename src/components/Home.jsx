@@ -5,6 +5,7 @@ import Success from "./comps/Success.jsx";
 import Tools from "./comps/tools.jsx";
 import Features from "./comps/Features.jsx";
 import Related from "./comps/related.jsx";
+import Test from "./comps/test.jsx";
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
         <Sections />
         <Features />
         <Related />
+        <Test />
       </div>
     </>
   );
