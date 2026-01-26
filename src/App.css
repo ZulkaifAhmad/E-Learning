@@ -700,10 +700,14 @@
 }
 #first-man-heading{
   color: #00CBB8;
+  margin-bottom: 6px;
 }
 .managment-text-part p{
   color: #696984;
-  margin-top: 10px;
+  margin-top: 15px;
+}
+.managment-image-part{
+  padding: 50px 0px;
 }
 .managment-image-part .card{
   width: 80%;
@@ -712,6 +716,10 @@
   border-radius: 10px;
 
   box-shadow: 1px 3px 4px rgba(128, 128, 128, 0.424);
+}
+.card{
+  position: relative;
+  z-index: 20;
 }
 .card-nav{
   background-color: #23BDEE;
@@ -744,6 +752,13 @@
 }
 .grade-pic-two{
   justify-content: end;
+  margin-top: 50px;
+}
+.grade-pic-four{
+  justify-content: end;
+}
+.grade-pic-four .line{
+  width: 130px;
 }
 .grade-pic-two .line{
   width: 200px;
@@ -752,4 +767,54 @@
 .grade-pic-three .line{
   width: 130px;
   background-color: #23BDEE;
+}
+
+
+
+
+/* Review - Home Component  */
+
+.Review{
+  min-height: 500px;
+  padding: 10px 100px;
+}
+.rape-line .line{
+  height: 2px;
+}
+.rape-line p{
+  color: #696984;
+}
+.review-text-part .review-P{
+  color: #696984;
+}
+.review-text-part h1{
+  font-weight: 600;
+}
+.review-text-part button{
+  padding: 10px 15px;
+  border-radius: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.299);
+}
+.review-image-part{
+  height: 500px;
+}
+.review-image-part img{
+  width: 50%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.review-message-card{
+  background-color: white;
+  padding: 15px;
+  width: 400px;
+
+  box-shadow: 1px 4px 3px rgba(128, 128, 128, 0.607);
+}
+.review-message p{
+  color: #696984;
+}
+.review-message-card strong{
+  color: #696984;
+  text-align: end;
 }

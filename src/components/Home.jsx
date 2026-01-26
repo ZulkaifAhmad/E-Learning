@@ -7,6 +7,7 @@ import Features from "./comps/Features.jsx";
 import Related from "./comps/related.jsx";
 import Test from "./comps/test.jsx";
 import Managment from "./comps/Managment.jsx";
+import Review from "./comps/Review.jsx";
 
 function Home() {
   return (
@@ -20,6 +21,7 @@ function Home() {
         <Related />
         <Test />
         <Managment />
+        <Review />
       </div>
     </>
   );
