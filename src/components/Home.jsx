@@ -6,6 +6,7 @@ import Tools from "./comps/tools.jsx";
 import Features from "./comps/Features.jsx";
 import Related from "./comps/related.jsx";
 import Test from "./comps/test.jsx";
+import Managment from "./comps/Managment.jsx";
 
 function Home() {
   return (
@@ -18,6 +19,7 @@ function Home() {
         <Features />
         <Related />
         <Test />
+        <Managment />
       </div>
     </>
   );
