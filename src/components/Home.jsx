@@ -8,6 +8,8 @@ import Related from "./comps/related.jsx";
 import Test from "./comps/test.jsx";
 import Managment from "./comps/Managment.jsx";
 import Review from "./comps/Review.jsx";
+import News from "./comps/News.jsx";
+
 
 function Home() {
   return (
@@ -22,6 +24,7 @@ function Home() {
         <Test />
         <Managment />
         <Review />
+        <News />
       </div>
     </>
   );

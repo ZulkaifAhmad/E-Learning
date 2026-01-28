@@ -5,7 +5,7 @@ function Button({text}) {
   return (
     <button
       type="button"
-      className="comp-button cursor-pointer bg-white rounded text-black active:text-amber-300"
+      className="comp-button cursor-pointer bg-white rounded text-black active:text-blue-300"
     >
       {text}
     </button>

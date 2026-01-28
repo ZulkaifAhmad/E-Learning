@@ -1,6 +1,7 @@
 import React from "react";
 import { assets } from "../../assets/assets";
 import Circle from "./circle";
+import Button from "./button";
 
 function Review() {
   return (
@@ -21,9 +22,7 @@ function Review() {
         <p className="review-P w-2/3 text-base">
           Are you too? Please give your assessment
         </p>
-        <button className="cursor-pointer active:text-blue-300">
-          Write your assessment
-        </button>
+        <Button text={"Write your assessment"} />
       </div>
 
       <div className="review-image-part flex relative items-center w-1/2">

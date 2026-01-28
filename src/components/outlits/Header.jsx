@@ -17,7 +17,7 @@ function Header() {
     return null;
   
   return (
-    <nav className="flex justify-between items-center box-border w-full h-20 px-8">
+    <nav className={`flex justify-between items-center box-border w-full h-20 px-8`}>
       <img
         src={assets.Logo}
         alt="logo_image"
