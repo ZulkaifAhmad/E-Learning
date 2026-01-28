@@ -41,6 +41,54 @@ function Blog() {
     }
   ]
 
+  const marketingArticles = [
+  {
+    img: assets.Girl_headphone_smiling,
+    title: "Top Strategies to Boost Your Brand Visibility",
+    category: "Marketing",
+    duration: "2 Months",
+    content:
+      "Learn the latest strategies to increase your brand reach and engagement through social media, content marketing, and SEO techniques.",
+    authorImg: assets.Girl_Standing,
+    author: "Sophia",
+    price: "499"
+  },
+  {
+    img: assets.Girl_books,
+    title: "Email Marketing Campaigns That Convert",
+    category: "Email",
+    duration: "1 Month",
+    content:
+      "Discover how to craft compelling email campaigns that convert subscribers into loyal customers using automation and personalization.",
+    authorImg: assets.Man2,
+    author: "Liam",
+    price: "299"
+  },
+  {
+    img: assets.classroom,
+    title: "Mastering Social Media Advertising Campaigns",
+    category: "Social Media",
+    duration: "3 Months",
+    content:
+      "Learn to design high-performing social media ads, targeting the right audience to maximize ROI across platforms like Facebook, Instagram, and TikTok.",
+    authorImg: assets.Girl_watching,
+    author: "Emma",
+    price: "399"
+  },
+  {
+    img: assets.girl_looking,
+    title: "Content Marketing: From Strategy to Execution",
+    category: "Content",
+    duration: "2.5 Months",
+    content:
+      "Understand how to plan, create, and distribute content effectively to drive traffic, generate leads, and build brand authority.",
+    authorImg: assets.Man,
+    author: "Noah",
+    price: "349"
+  }
+]
+
+
   return (
     <div id="Blog">
       <div className="blog-head flex justify-between items-center gap-5">
@@ -120,7 +168,7 @@ function Blog() {
       <div className="related-blog">
         <p className="font-bold text-base">Marketing Articles</p>
         <div className="related-blog-list marketing-blog-list flex justify-between items-start flex-wrap">
-          {relatedBlogs.map((item, index) => (
+          {marketingArticles.map((item, index) => (
             <div
               key={index}
               className="related-blog-list-categorie rounded-2xl flex flex-col gap-2"
@@ -132,11 +180,11 @@ function Blog() {
               <div className="flex justify-between items-center">
                 <div className="flex gap-1.5 items-center">
                 <Box size={20} color="gray"/>
-                <p className="text-xs text-gray-500">Design</p>
+                <p className="text-xs text-gray-500">{item.category}</p>
                 </div>
                 <div className="flex items-center gap-1.5">
                   <Clock size={16} color="gray"/>
-                  <p className="text-xs text-gray-500">3 Months</p>
+                  <p className="text-xs text-gray-500">{item.duration}</p>
                 </div>
               </div>
               <p id="related-content" className="line-clamp-3 text-xs">
@@ -153,7 +201,7 @@ function Blog() {
               </div>
                 <div className="flex gap-0.5 items-center">
                   <DollarSign size={16} color="gray"/>
-                  <p className="text-base tracking-tight">344</p>
+                  <p className="text-base font-serif tracking-tight">{item.price}</p>
                 </div>
               </div>
 
