@@ -3,7 +3,7 @@ import { assets } from "../assets/assets";
 export const marketingArticles = [
   {
     slug: "top-strategies-to-boost-your-brand-visibility",
-    img: assets.Girl_headphone_smiling,
+    img: assets.courses_details,
     title: "Top Strategies to Boost Your Brand Visibility",
     category: "Marketing",
     duration: "2 Months",
@@ -15,7 +15,7 @@ export const marketingArticles = [
   },
   {
     slug: "email-marketing-campaigns-that-convert",
-    img: assets.Girl_books,
+    img: assets.group,
     title: "Email Marketing Campaigns That Convert",
     category: "Email",
     duration: "1 Month",
@@ -39,7 +39,7 @@ export const marketingArticles = [
   },
   {
     slug: "content-marketing-from-strategy-to-execution",
-    img: assets.girl_looking,
+    img: assets.group_two,
     title: "Content Marketing: From Strategy to Execution",
     category: "Content",
     duration: "2.5 Months",

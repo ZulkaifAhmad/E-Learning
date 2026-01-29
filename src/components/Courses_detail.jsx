@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { marketingArticles } from "./Articles";
+import "./Blog.css"
 
 function Courses_detail() {
   const { id } = useParams();
@@ -10,8 +11,12 @@ function Courses_detail() {
   return (
     <div className="courses-details">
       {get_article.map((item) => (
-        <div className="details-head" key={item.slug}>
+        <div className="details-head relative z-0" key={item.slug}>
           <img src={item.img} alt={item.title} />
+          <div className="rapper-details-head flex justify-center items-center flex-col gap-2 absolute z-10 w-full h-full top-0">
+            <h1 className="text-3xl text-center font-bold w-2/3">{item.title}</h1>
+            <p className="text-base text-center w-2/3">{item.content}</p>
+          </div>
         </div>
       ))}
     </div>

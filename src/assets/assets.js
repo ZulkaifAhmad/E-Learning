@@ -18,9 +18,20 @@ import php from "./php.jpg"
 import js from "./js.png"
 import react from "./react.jpg"
 import girl_looking from "./girl-looking.png"
+import Email_Marketing from "./Email-Markiting.jpg"
+import Content_Marketing from "./Email-Markiting.jpg"
+import Stratiegic_Marketing from "./Stratigies.png"
+import courses_details from "./Courses-details.jpg"
+import group from "./group.jpg"
+import group_two from "./group2.png"
 
 
 export const assets = {
+    group ,
+    group_two,
+    courses_details,
+    Email_Marketing , Content_Marketing ,
+    Stratiegic_Marketing ,
     girl_looking ,
     php , js , react ,
     laptop ,

@@ -180,14 +180,21 @@
 
 
 /* courses detials  */
-
+.courses-details{
+    padding: 0px;
+}
 .details-head{
     width: 100%;
-    height: 360px;
-    overflow: hidden;
+    height: 440px;
+    background:#0ca464;
 }
 .details-head img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+}
+.details-head .rapper-details-head{
+    color: white;
+    background-color: rgba(156, 155, 155, 0.857);
 }
