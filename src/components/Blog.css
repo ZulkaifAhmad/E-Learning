@@ -195,6 +195,6 @@
     object-position: center;
 }
 .details-head .rapper-details-head{
-    color: white;
-    background-color: rgba(156, 155, 155, 0.857);
+    color: rgba(255, 255, 255, 0.899);
+    background-color: rgba(0, 0, 0, 0.499);
 }

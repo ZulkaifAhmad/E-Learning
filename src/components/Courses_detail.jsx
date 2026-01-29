@@ -14,8 +14,8 @@ function Courses_detail() {
         <div className="details-head relative z-0" key={item.slug}>
           <img src={item.img} alt={item.title} />
           <div className="rapper-details-head flex justify-center items-center flex-col gap-2 absolute z-10 w-full h-full top-0">
-            <h1 className="text-3xl text-center font-bold w-2/3">{item.title}</h1>
-            <p className="text-base text-center w-2/3">{item.content}</p>
+            <h1 className="text-4xl text-center font-bold w-2/3">{item.title}</h1>
+            <p className="text-xl text-center w-2/3">{item.content}</p>
           </div>
         </div>
       ))}
