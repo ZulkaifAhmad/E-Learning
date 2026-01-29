@@ -10,6 +10,7 @@ import Courses from './components/Courses.jsx'
 import Blog from './components/Blog.jsx'
 import Signup from './components/Signup.jsx'
 import Login from './components/Login.jsx'
+import Courses_detail from './components/Courses_detail.jsx'
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path : "/courses" , 
         element : <Courses />
+      },
+      {
+        path : "/courses/:id" , 
+        element : <Courses_detail />
       },
       {
         path : "/blog" , 
