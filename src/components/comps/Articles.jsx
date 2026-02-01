@@ -1,13 +1,20 @@
 import { Box, Clock, DollarSign } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { marketingArticles } from "../Articles";
 
-function Articles({ marketingArticles }) {
+
+function Articles({enable = false}) {
   let navigate = useNavigate();
+  
   return (
-    <>
+    <> 
       {marketingArticles.map((item, index) => (
         <div
-          onClick={()=> navigate(item.slug)}
+          onClick={()=>( 
+            enable ? 
+            navigate(`${item.slug}`)
+            : undefined
+          )}
           key={index}
           className="related-blog-list-categorie rounded-2xl flex flex-col gap-2"
         >

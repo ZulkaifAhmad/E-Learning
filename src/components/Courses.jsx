@@ -139,13 +139,13 @@ function Courses() {
       <div className="Recommended">
           <h1 className="recommended-heading text-xl font-bold">Recommended for you</h1>
       <div className="recommended-courses flex gap-5">
-        <Articles marketingArticles={marketingArticles}/>
+        <Articles enable={true}/>
       </div>
       </div>
       <div className="Recommended get-choise">
           <h1 className="recommended-heading text-xl font-bold">Get choice of your course</h1>
       <div className="recommended-courses flex gap-5">
-        <Articles marketingArticles={marketingArticles}/>
+        <Articles enable={true}/>
       </div>
       </div>
           <div className="learning-rapper">
@@ -161,14 +161,14 @@ function Courses() {
       <div className="Recommended">
           <h1 className="recommended-heading text-xl font-bold">Recommended for you</h1>
       <div className="recommended-courses flex gap-5">
-        <Articles marketingArticles={marketingArticles}/>
+        <Articles enable={true}/>
       </div>
       </div>
 
       <div className="Recommended get-choise">
           <h1 className="recommended-heading text-xl font-bold">Get Student are viewing</h1>
       <div className="recommended-courses flex gap-5">
-        <Articles marketingArticles={marketingArticles}/>
+        <Articles enable={true}/>
       </div>
       </div>
 

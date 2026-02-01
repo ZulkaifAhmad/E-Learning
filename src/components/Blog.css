@@ -198,3 +198,17 @@
     color: rgba(255, 255, 255, 0.899);
     background-color: rgba(0, 0, 0, 0.499);
 }
+.hero-section-left{
+    padding: 20px 77px;
+    min-height: 400px;
+}
+.hero-section-left #overview-details-p{
+    padding: 5px 8px;
+}
+.details-overviews{
+    margin-top: 20px;
+    padding: 10px;
+}
+.rapper-overviews{
+    background-color: #e2f0ff;
+}
