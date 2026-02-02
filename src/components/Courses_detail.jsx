@@ -92,13 +92,13 @@ function Courses_detail() {
               <div key={index} className="space-y-3">
                 <div className="flex items-center gap-3">
                   <img
-                    src={assets.Girl_Standing}
+                    src={assets.Man2}
                     alt="User Profile"
                     className="w-10 h-10 rounded-full border object-cover"
                   />
 
                   <div className="flex-1">
-                    <h4 className="font-semibold text-sm">Lina</h4>
+                    <h4 className="font-semibold text-sm">Azhar</h4>
                     <div className="flex gap-0.5 text-orange-500">
                       <Star size={14} fill="currentColor" />
                       <Star size={14} fill="currentColor" />
@@ -113,7 +113,7 @@ function Courses_detail() {
 
                 <p className="text-sm text-gray-700 leading-relaxed">
                   Class, launched less than a year ago by Blackboard co-founder
-                  Michael Chasen, integrates exclusively...
+                  Michael Chasen, integrates exclusively Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi ipsa voluptatum reiciendis cum labore ex aliquid enim hic, culpa dolore....
                 </p>
 
                 {index === 0 && <hr className="border-gray-200" />}

@@ -7,9 +7,9 @@ function Header() {
   let Nav = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Careers", path: "/careers" },
     { name: "Courses", path: "/courses" },
     { name: "Blog", path: "/blog" },
+    { name: "Pricing", path: "/careers" },
   ];
   let navigation = useNavigate();
   let location = useLocation();

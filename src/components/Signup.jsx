@@ -1,16 +1,31 @@
-import { useState } from "react";
 import { Eye } from "lucide-react";
 import { assets } from "../assets/assets";
+import { useLocation, useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 export default function AuthPage() {
-  const [active, setActive] = useState("login");
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const isLogin = location.pathname === "/login";
+  const isSignup = location.pathname === "/signup";
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div 
+      onClick={()=> navigate(-1)}
+      className="back absolute top-10 cursor-pointer text-gray-700 bg-gray-200 p-2 px-6 rounded-3xl left-45 flex gap-2 items-center">
+        <ArrowLeft size={20} />
+        <p className="text-base">Back</p>
+      </div>
       <div className="w-full max-w-5xl bg-white rounded-2xl shadow-lg flex overflow-hidden">
 
         <div className="w-1/2 hidden md:block">
-          <img src={`${assets.kid}`} alt="students" className="h-full w-full object-cover" />
+          <img
+            src={assets.kid}
+            alt="students"
+            className="h-full w-full object-cover"
+          />
         </div>
 
         <div className="w-full md:w-1/2 p-10">
@@ -20,20 +35,21 @@ export default function AuthPage() {
 
           <div className="flex bg-gray-100 rounded-full p-1 mb-6">
             <button
-              onClick={() => setActive("login")}
+              onClick={() => navigate("/login")}
               className={`w-1/2 py-2 rounded-full text-sm ${
-                active === "login" && "bg-teal-400 text-white"
+                isLogin ? "bg-teal-400 text-white" : ""
               }`}
             >
               Login
             </button>
+
             <button
-              onClick={() => setActive("register")}
+              onClick={() => navigate("/signup")}
               className={`w-1/2 py-2 rounded-full text-sm ${
-                active === "register" && "bg-teal-400 text-white"
+                isSignup ? "bg-teal-400 text-white" : ""
               }`}
             >
-              Register
+              Signup
             </button>
           </div>
 
@@ -44,10 +60,10 @@ export default function AuthPage() {
               className="w-full px-4 py-2 border rounded-full outline-none"
             />
 
-            {active === "register" && (
+            {isSignup && (
               <input
                 type="email"
-                placeholder="Email-address"
+                placeholder="Email address"
                 className="w-full px-4 py-2 border rounded-full outline-none"
               />
             )}
@@ -61,7 +77,7 @@ export default function AuthPage() {
               <Eye className="absolute right-4 top-3 w-4 text-gray-400" />
             </div>
 
-            {active === "login" && (
+            {isLogin && (
               <div className="flex justify-between text-sm">
                 <label className="flex gap-2 items-center">
                   <input type="checkbox" /> Remember me
@@ -73,7 +89,7 @@ export default function AuthPage() {
             )}
 
             <button className="w-full py-2 bg-teal-400 text-white rounded-full font-medium">
-              {active === "login" ? "Login" : "Register"}
+              {isLogin ? "Login" : "Signup"}
             </button>
           </form>
         </div>
