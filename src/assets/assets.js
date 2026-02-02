@@ -24,10 +24,11 @@ import Stratiegic_Marketing from "./Stratigies.png"
 import courses_details from "./Courses-details.jpg"
 import group from "./group.jpg"
 import group_two from "./group2.png"
+import kid from "./kid.jpg"
 
 
 export const assets = {
-    group ,
+    group , kid ,
     group_two,
     courses_details,
     Email_Marketing , Content_Marketing ,

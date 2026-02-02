@@ -1,25 +1,30 @@
-import "./outlits.css"
+import "./outlits.css";
 import { assets } from "../../assets/assets";
+import { useLocation } from "react-router-dom";
 
 const Footer = () => {
+  let location = useLocation();
+  if (location.pathname === "/signup" || location.pathname === "/login")
+    return null;
   return (
     <footer className="footer-container">
       <div className="footer-content">
-        
         <div className="footer-header">
-          <img src={assets.Logo} alt="logo" className="footer-logo"/>
+          <img src={assets.Logo} alt="logo" className="footer-logo" />
           <div className="divider"></div>
           <div className="tagline">
-            Virtual Class<br />for Zoom
+            Virtual Class
+            <br />
+            for Zoom
           </div>
         </div>
 
         <div className="newsletter-section">
           <p className="newsletter-title">Subscribe to get our Newsletter</p>
           <div className="input-group">
-            <input 
-              type="email" 
-              placeholder="Your Email" 
+            <input
+              type="email"
+              placeholder="Your Email"
               className="email-input"
             />
             <button className="subscribe-btn">Subscribe</button>
@@ -36,7 +41,6 @@ const Footer = () => {
           </div>
           <p className="copyright">© 2021 Class Technologies Inc.</p>
         </div>
-
       </div>
     </footer>
   );

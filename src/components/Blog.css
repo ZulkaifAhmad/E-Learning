@@ -212,3 +212,11 @@
 .rapper-overviews{
     background-color: #e2f0ff;
 }
+
+.courses-details-sections p{
+    font-size: 14px;
+    line-height: 22px;
+}
+.courses-details-sections h1{
+    font-size: 25px;
+}
