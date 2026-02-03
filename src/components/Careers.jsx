@@ -187,7 +187,6 @@ const MembershipPage = () => {
         </div>
       </section>
 
-      {/* APP DOWNLOAD BANNER */}
       <section className="max-w-5xl mx-auto px-6 mb-16">
          <div className="bg-[#252641] rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
             <h2 className="text-xl font-bold text-white">APP is available for free</h2>
