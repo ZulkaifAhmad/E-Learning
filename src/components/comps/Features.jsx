@@ -5,7 +5,7 @@ import Circle from "./circle.jsx";
 
 const Features = () => {
   return (
-    <section className="features-section relative">
+    <section className="features-section relative hidden md:block">
       <div className="features-header">
         <h2 className="section-title">
           Our <span className="text-teal">Features</span>
@@ -29,7 +29,7 @@ const Features = () => {
             <Circle bg="bg-red-300" w="40px" />
           </div>
 
-      <div className="rape-features flex justify-between items-center">
+      <div className="rape-features flex justify-between items-center ">
         <div className="left w-2/3 h-102 rounded-2xl relative overflow-hidden">
           <div className="window rounded-2xl">
             <div className="window-nav">
@@ -56,17 +56,17 @@ const Features = () => {
                 </div>
               </div>
 
-              <div className="window-right w-2/3 flex">
+              <div className="window-right w-2/3 flex hide-on-mobile">
                 <div className="rape-two-images alone-images w-1/2 flex flex-col gap-3">
                   <img
                     src={assets.Man}
                     alt="man-picture"
-                    className="window-right-images"
+                    className="window-right-images "
                   />
                   <img
                     src={assets.Man2}
                     alt="man-picture"
-                    className="window-right-images"
+                    className="window-right-images "
                   />
                 </div>
 

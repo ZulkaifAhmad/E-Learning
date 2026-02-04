@@ -8,13 +8,15 @@ function Tools() {
       <h1 className="text-3xl text-center">All-In-One Cloud Software.</h1>
 
       <div className="raperP flex justify-center items-center">
-        <p className="text-center w-1/2 mt-4 text-base tracking-wide">
+        {/* Changed w-1/2 to w-full for mobile, added padding */}
+        <p className="text-center w-full px-5 md:w-1/2 md:px-0 mt-4 text-base tracking-wide">
           TOTC is one powerful online software suite that combines all the tools
           needed to run a successful school or office.
         </p>
       </div>
 
-      <div className="cards flex justify-center gap-5 items-center">
+      {/* Added flex-wrap so cards stack on mobile */}
+      <div className="cards flex flex-wrap justify-center gap-10 md:gap-5 items-center">
         <div className="tools-card">
           <span>
             <Newspaper size={20} color="white" />
@@ -53,10 +55,11 @@ function Tools() {
         </div>
       </div>
 
-      <div className="what">
+      <div className="what mt-20">
         <h1 className="text-center text-3xl">What is TOTC?</h1>
         <div className="P-div w-full flex justify-center items-center">
-          <p className="w-2/3 text-center tracking-wide">
+           {/* Changed w-2/3 to w-full for mobile */}
+          <p className="w-full px-5 md:w-2/3 text-center tracking-wide mt-4 mb-10">
             TOTC is a platform that allows educators to create online classes
             whereby they can store the course materials online; manage
             assignments, quizzes and exams; monitor due dates; grade results and
@@ -64,24 +67,24 @@ function Tools() {
           </p>
         </div>
 
-        <div className="what-rapper flex justify-center items-center gap-10">
-        <div className="what_card">
-          <img src={assets.Girl_Standing} alt="girl_standing_picture" />
-          <div className="textPart">
-            <h2 className="font-bold text-xl text-white">FOR INSTRUCTORS</h2>
-            <button>Start a class Today</button>
+        {/* Added flex-wrap here for the bottom images */}
+        <div className="what-rapper flex flex-wrap justify-center items-center gap-10">
+          <div className="what_card relative rounded-2xl overflow-hidden shadow-lg">
+            <img src={assets.Girl_Standing} alt="girl_standing_picture" className="w-full h-full object-cover"/>
+            <div className="textPart absolute top-0 left-0 w-full h-full bg-black/30 flex flex-col justify-center items-center gap-4">
+              <h2 className="font-bold text-xl text-white">FOR INSTRUCTORS</h2>
+              <button className="px-6 py-3 border border-white text-white rounded-full hover:bg-white hover:text-slate-800 transition">Start a class Today</button>
+            </div>
+          </div>
+
+          <div className="what_card relative rounded-2xl overflow-hidden shadow-lg">
+            <img src={assets.Girl_books} alt="girl_standing_picture" className="w-full h-full object-cover" />
+            <div className="textPart absolute top-0 left-0 w-full h-full bg-black/30 flex flex-col justify-center items-center gap-4">
+              <h2 className="font-bold text-xl text-white">FOR STUDENTS</h2>
+              <button className="px-6 py-3 bg-teal-500 text-white border-none rounded-full hover:bg-teal-600 transition">Enter access code</button>
+            </div>
           </div>
         </div>
-
-        <div className="what_card">
-          <img src={assets.Girl_books} alt="girl_standing_picture" />
-          <div className="textPart">
-            <h2 className="font-bold text-xl text-white">FOR STUDENTS</h2>
-            <button>Enter access code</button>
-          </div>
-        </div>
-        </div>
-
       </div>
     </div>
   );
