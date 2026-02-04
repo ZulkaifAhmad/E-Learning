@@ -35,8 +35,11 @@
   color: white;
   line-height: 40px;
   padding: 0vw;
+  text-align: start;
+  line-height: 50px;
   margin: 0%;
 }
+
 .text-part p {
   color: white;
 }
@@ -89,6 +92,13 @@
   bottom: 20%;
   left: 50px;
 }
+
+@media screen and (max-width: 768px){
+  .text-part h1{
+    text-align: center;
+  }
+}
+
 
 /* Success-Store Homepage */
 
