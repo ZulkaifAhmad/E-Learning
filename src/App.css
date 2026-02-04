@@ -94,8 +94,15 @@
 }
 
 @media screen and (max-width: 768px){
+  .main{
+    padding:20px 5vw;
+  }
+
   .text-part h1{
     text-align: center;
+  }
+  .picture-part{
+    display: none;
   }
 }
 
