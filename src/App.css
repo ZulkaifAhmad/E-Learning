@@ -119,6 +119,7 @@
 @media screen and (max-width: 768px) {
   .success-story {
     margin-top: 40px;
+    background-color: white !important;
   }
   
   .rappe_success_count {
