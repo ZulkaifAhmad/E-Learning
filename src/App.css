@@ -6,6 +6,7 @@
 .Home {
   min-height: 500px;
   box-sizing: border-box;
+  background-color: white;
 }
 .main {
   clip-path: ellipse(150% 100% at 50% 0%);
@@ -132,6 +133,7 @@
 
 .Tools {
   padding: 100px 50px;
+  background-color: white;
 }
 .Tools h1 {
   font-weight: 600;
@@ -184,6 +186,7 @@
 @media screen and (max-width: 768px) {
   .Tools {
     padding: 50px 20px;
+    background-color: white;
   }
 
   .tools-card {
@@ -200,11 +203,14 @@
      top: -30px; 
   }
 }
+
 .what-rapper{
   margin-top: 45px;
+  background-color: white;
 }
 .what{
   margin-top: 8vw;
+  background-color: white;
 }
 .what .P-div{
   margin-top: 15px;
@@ -267,6 +273,7 @@
   margin: 0 auto;
   padding:10px 50px;
   gap: 60px;
+  background-color: white;
   font-family: 'Poppins', sans-serif; 
 }
 
@@ -386,7 +393,6 @@
   z-index: 1;
 }
 
-/* Play Button */
 .play-button {
   position: absolute;
   top: 50%;
@@ -424,6 +430,7 @@
     flex-direction: column;
     text-align: center;
     padding: 40px 20px;
+    background-color: white;
     gap: 40px;
   }
 
@@ -452,6 +459,7 @@
   padding: 80px 20px;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: white;
 }
 
 .features-header {
@@ -478,7 +486,7 @@
 }
 
 .window{
-  background:linear-gradient(to bottom , #f9f9f9 , #f9f9f9b9 ) ;
+  background:linear-gradient(to bottom , #f9f9f9 , #f9f9f9 ) ;
   width: 75%;
   height: 80%;
   border-radius: 20px ;
@@ -593,6 +601,7 @@
 
 .Related{
   padding: 5px 120px;
+  background-color: white;
 }
 .related-text-part #heading-span{
   color: #00CBB8;
@@ -643,6 +652,7 @@
 @media (min-width: 1024px) {
   .Related {
     padding: 5px 120px;
+    background-color: white;
   }
 }
 
@@ -714,6 +724,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
   box-sizing: border-box;
 }
 .test-image-part{
@@ -788,6 +799,7 @@
     flex-direction: column-reverse; /* Puts text on top, or remove '-reverse' to put image on top */
     padding: 20px 20px; 
     height: auto;
+    background-color: white;
   }
 
   .test-image-part {
@@ -831,6 +843,7 @@
 
 .Managment{
   padding: 10px 100px;
+  background-color: white;
 }
 #first-man-heading{
   color: #00CBB8;
@@ -907,6 +920,7 @@
   .Managment {
     padding: 30px 20px; 
     height: auto;
+    background-color: white;
   }
 
   .managment-text-part {
@@ -933,6 +947,7 @@
 .Review{
   min-height: 500px;
   padding: 10px 100px;
+  background-color: white;
 }
 .rape-line .line{
   height: 2px;
@@ -977,6 +992,7 @@
   .Review {
     padding: 40px 20px; 
     height: auto;
+    background-color: white;
   }
 
   .review-text-part {
@@ -1009,6 +1025,7 @@
   box-sizing: border-box;
   padding: 50px 100px;
   margin-top: 30px;
+  background-color: white;
 }
 
 .News #news-des{
@@ -1068,6 +1085,7 @@
 @media screen and (max-width: 900px) {
   .News {
     padding: 30px 20px; 
+    background-color: white;
     margin-top: 10px;
   }
 
