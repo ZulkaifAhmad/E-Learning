@@ -1,222 +1,271 @@
-#Blog{
-    width: 100%;
-    /* height: 100%; */
-    box-sizing: border-box;
+#Blog {
+  width: 100%;
+  box-sizing: border-box;
 }
-.blog-head{
-    width: 100%;
-    /* height: 500px; */
-    padding: 50px 100px;
-    background-color: #ebf5ff;
+.blog-head {
+  width: 100%;
+  padding: 50px 100px;
+  background-color: #ebf5ff;
 }
-#before-heading-blog span{
-    color:  blue ;
+#before-heading-blog span {
+  color: blue;
 }
-.blog-head-left button{
-    width: fit-content;
-    background-color: #0ca464;
-    color: white;
-    font-size: 14px;
+.blog-head-left button {
+  width: fit-content;
+  background-color: #0ca464;
+  color: white;
+  font-size: 14px;
 }
-.blog-head-right img{
-    height: 300px;
-    border-radius: 10px;
-    width: 500px;
-    object-fit: cover;
+.blog-head-right img {
+  height: 300px;
+  border-radius: 10px;
+  width: 500px;
+  object-fit: cover;
 }
 
-.blog-list{
-    padding: 20px 100px;
+.blog-list {
+  padding: 20px 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#blog-list-heading {
+  margin-bottom: 20px;
+}
+.list-one img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 0;
+}
+.list-one p {
+  background-color: whitesmoke;
+  padding: 5px 10px;
+  box-shadow: 1px -1px 2px rgba(128, 128, 128, 0.447);
+  border-radius: 10px;
+}
+
+.related-blog {
+  background-color: #ebf5ff;
+  padding: 40px 100px;
+}
+.related-blog-list {
+  margin-top: 20px;
+}
+.related-blog-list-categorie {
+  width: 360px;
+  overflow: hidden;
+  padding: 20px;
+  box-shadow: 1px 2px 3px rgba(128, 128, 128, 0.377);
+  background-color: white;
+}
+.related-blog-list-categorie #related-img {
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.related-blog-list-categorie #related-content {
+  color: #696984;
+}
+.related-footer {
+  margin-top: 20px;
+}
+.related-footer p {
+  color: #696984;
+}
+
+.marketing-blog-list .related-blog-list-categorie {
+  width: 280px;
+  padding: 10px;
+}
+.marketing-blog-list .related-blog-list-categorie #related-img {
+  width: 100%;
+  height: 180px;
+}
+.marketing-blog-list {
+  gap: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .blog-head,
+  .blog-list,
+  .related-blog {
+    padding: 30px 20px;
+  }
+
+  .blog-head-right img {
+    width: 100%;
+    height: auto;
     margin-top: 20px;
-    margin-bottom: 20px;
-}
-#blog-list-heading{
-    margin-bottom: 20px;
-}
-.list-one img{
-    height: 100%;
+  }
+
+  .related-blog-list-categorie {
     width: 100%;
-    object-fit: cover;
-    position: relative;
-    z-index: 0;
-}
-.list-one p{
-    background-color: whitesmoke;
-    padding: 5px 10px;
-    box-shadow: 1px -1px 2px rgba(128, 128, 128, 0.447);
-    border-radius: 10px;
-}
+    max-width: 360px;
+  }
 
-.related-blog{
-    background-color: #ebf5ff;
-    padding: 40px 100px ;
-
-}
-.related-blog-list{
-    margin-top: 20px;
-}
-.related-blog-list-categorie{
-    width: 360px;
-    /* height: 450px; */
-    overflow: hidden;
-    padding: 20px;
-    box-shadow: 1px 2px 3px rgba(128, 128, 128, 0.377);
-    background-color: white;
-}
-.related-blog-list-categorie #related-img{
+  .marketing-blog-list .related-blog-list-categorie {
     width: 100%;
-    object-fit: cover;
-    object-position: top;
-    height: 200px;
-    border-radius: 10px;
-}
+    max-width: 350px;
+  }
 
-.related-blog-list-categorie #related-content{
-    color: #696984;
+  .marketing-blog-list {
+    justify-content: center;
+  }
 }
-.related-footer{
-    margin-top: 20px;
-}
-.related-footer p{
-    color: #696984;
-}
-
-
-.marketing-blog-list .related-blog-list-categorie{
-    width: 280px;
-    padding: 10px;
-}
-.marketing-blog-list .related-blog-list-categorie #related-img{
-    width: 100%;
-    height: 180px;
-}
-.marketing-blog-list{
-    gap: 10px;
-}
-
-
 
 /* Courses - Page  */
 
-
-.Courses{
-    box-sizing: border-box;
+.Courses {
+  box-sizing: border-box;
 }
 
-.courses-head{
-    padding: 20px 76px;
-    background-color: #eaf3fe;
+.courses-head {
+  padding: 20px 76px;
+  background-color: #eaf3fe;
 }
-.lessons{
-    margin-top: 20px;
+.lessons {
+  margin-top: 20px;
 }
-.lesson{
-    padding: 10px;
-    border-radius: 10px;
-    background-color: white;
-
+.lesson {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
 }
-.lesson .line{
-    margin: 5px 0px;
+.lesson .line {
+  margin: 5px 0px;
 }
-.lesson .coverd-line{
-    background-color: #49bbbd;
-
+.lesson .coverd-line {
+  background-color: #49bbbd;
 }
-.fav-courses{
-    padding: 40px 77px;
+.fav-courses {
+  padding: 40px 77px;
 }
-.fav-courses .raper-fav-courses{
-    margin-top: 30px;
-
+.fav-courses .raper-fav-courses {
+  margin-top: 30px;
 }
-.fav-course{
-    width: 250px;
-    background-color: white;
-    padding: 15px 10px; cursor: pointer;
-    box-shadow: 1px 1px 3px rgba(128, 128, 128, 0.25);
+.fav-course {
+  width: 250px;
+  background-color: white;
+  padding: 15px 10px;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(128, 128, 128, 0.25);
 }
-.fav-course:hover{
-    box-shadow: 1px 1px 3px rgba(128, 128, 128, 0.772);
+.fav-course:hover {
+  box-shadow: 1px 1px 3px rgba(128, 128, 128, 0.772);
 }
-.fav-course span{
-    background-color: lightblue;
-    padding: 8px;
-    border-radius: 5px;
+.fav-course span {
+  background-color: lightblue;
+  padding: 8px;
+  border-radius: 5px;
 }
-
-/* recommended articles */
-.Recommended{
-    background-color: #ebf5ff;
-    padding: 40px 70px;
+.Recommended {
+  background-color: #ebf5ff;
+  padding: 40px 70px;
 }
-.Recommended .recommended-heading{
-    margin-bottom: 20px;
+.Recommended .recommended-heading {
+  margin-bottom: 20px;
 }
-.get-choise{
-    background-color: white;
+.get-choise {
+  background-color: white;
 }
 
-.learning-rapper{
-    padding: 5px 77px;
-    margin-bottom: 40px;
+.learning-rapper {
+  padding: 5px 77px;
+  margin-bottom: 40px;
 }
-.start-learning{
-    background-color: #252641;
-    padding: 30px 77px;
-    border-radius: 30px;
-    color: white;
-}
-
-.start-learning button{
-    background-color: #0ca464;
-    color: white;
-    font-size: 14px;
+.start-learning {
+  background-color: #252641;
+  padding: 30px 77px;
+  border-radius: 30px;
+  color: white;
 }
 
+.start-learning button {
+  background-color: #0ca464;
+  color: white;
+  font-size: 14px;
+}
 
+@media screen and (max-width: 900px) {
+  .courses-head,
+  .fav-courses,
+  .Recommended,
+  .learning-rapper {
+    padding: 30px 20px; 
+  }
 
+  .fav-courses .raper-fav-courses {
+    justify-content: center; 
+  }
 
+  .fav-course {
+    width: 100%;
+    max-width: 350px; 
+  }
 
+  .start-learning {
+    padding: 30px 20px;
+    border-radius: 15px; 
+  }
+}
 
 /* courses detials  */
-.courses-details{
-    padding: 0px;
+.courses-details {
+  padding: 0px;
 }
-.details-head{
-    width: 100%;
-    height: 440px;
-    background:#0ca464;
+.details-head {
+  width: 100%;
+  height: 440px;
+  background: #0ca464;
 }
-.details-head img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+.details-head img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
-.details-head .rapper-details-head{
-    color: rgba(255, 255, 255, 0.899);
-    background-color: rgba(0, 0, 0, 0.499);
+.details-head .rapper-details-head {
+  color: rgba(255, 255, 255, 0.899);
+  background-color: rgba(0, 0, 0, 0.499);
 }
-.hero-section-left{
-    padding: 20px 77px;
-    min-height: 400px;
+.hero-section-left {
+  padding: 20px;
+  min-height: 400px;
 }
-.hero-section-left #overview-details-p{
-    padding: 5px 8px;
+.hero-section-left #overview-details-p {
+  padding: 5px 8px;
 }
-.details-overviews{
-    margin-top: 20px;
-    padding: 10px;
+.details-overviews {
+  margin-top: 20px;
+  padding: 10px;
 }
-.rapper-overviews{
-    background-color: #e2f0ff;
+.rapper-overviews {
+  background-color: #e2f0ff;
 }
 
-.courses-details-sections p{
-    font-size: 14px;
-    line-height: 22px;
+.courses-details-sections p {
+  font-size: 14px;
+  line-height: 22px;
 }
-.courses-details-sections h1{
-    font-size: 25px;
+.courses-details-sections h1 {
+  font-size: 25px;
+}
+
+@media screen and (max-width: 900px) {
+  .details-head {
+    height: 350px;
+  }
+
+  .hero-section-left {
+    padding: 20px 20px;
+    width: 100%;
+  }
+
+  .courses-details-sections {
+    padding: 0 20px;
+  }
 }

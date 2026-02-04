@@ -1,28 +1,28 @@
-import "../../App.css"
-import Success_Count from './success_count'
+import "../../App.css";
+import Success_Count from "./success_count";
 
 function Success() {
   return (
-    <div className='success-story'>
-        <h1 className="heading text-center text-3xl md:text-4xl">Our Success</h1>
-        
-        <div className="w-full flex justify-center items-center">
-          {/* Changed w-1/2 to w-full for mobile, md:w-1/2 for laptop */}
-          <p className="text-center tracking-wide text-base w-full px-4 md:w-1/2 md:px-0">
-            Ornare id fames interdum porttitor nulla turpis etiam. Diam vitae sollicitudin at nec nam et pharetra gravida. Adipiscing a quis ultrices eu ornare tristique vel nisl orci. 
-          </p>
-        </div>
+    <div className="success-story">
+      <h1 className="heading text-center text-3xl md:text-4xl">Our Success</h1>
 
-        {/* Added flex-wrap here to ensure items wrap on small screens */}
-        <div className="rappe_success_count flex flex-wrap justify-center md:justify-evenly items-center gap-8 md:gap-5">
-            <Success_Count per="50+" text="Students" />
-            <Success_Count per="75%" text="Total Success" />
-            <Success_Count per="35" text="Main Questions" />
-            <Success_Count per="25" text="Chief Expert" />
-            <Success_Count per="16" text="Years of Experience" />
-        </div>
+      <div className="w-full flex justify-center items-center">
+        <p className="text-center tracking-wide text-base w-full px-4 md:w-1/2 md:px-0">
+          Ornare id fames interdum porttitor nulla turpis etiam. Diam vitae
+          sollicitudin at nec nam et pharetra gravida. Adipiscing a quis
+          ultrices eu ornare tristique vel nisl orci.
+        </p>
+      </div>
+
+      <div className="rappe_success_count flex flex-wrap justify-center md:justify-evenly items-center gap-8 md:gap-5">
+        <Success_Count per="50+" text="Students" />
+        <Success_Count per="75%" text="Total Success" />
+        <Success_Count per="35" text="Main Questions" />
+        <Success_Count per="25" text="Chief Expert" />
+        <Success_Count per="16" text="Years of Experience" />
+      </div>
     </div>
-  )
+  );
 }
 
-export default Success
+export default Success;

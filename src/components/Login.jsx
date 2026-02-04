@@ -2,7 +2,6 @@ import { Eye, EyeOff, ArrowLeft } from "lucide-react";
 import { assets } from "../assets/assets";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
-// Removed unused/incorrect import: import js from "@eslint/js";
 
 export default function AuthPage() {
   const location = useLocation();
@@ -12,14 +11,13 @@ export default function AuthPage() {
   const isSignup = location.pathname === "/signup";
 
   const [showPassword, setShowPassword] = useState(false);
-  
-  // FIX 1: Added 'email' back to state so it doesn't crash
-  const [formData, setFormData] = useState({ 
-    username: "", 
-    email: "", 
-    password: "" 
+
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
   });
-  
+
   const [errors, setErrors] = useState({});
 
   const validateForm = () => {
@@ -58,9 +56,9 @@ export default function AuthPage() {
     }
   };
 
-const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (validateForm()) {
       if (isSignup) {
         const newUserData = { ...formData, isLogin: false };
@@ -68,9 +66,8 @@ const handleSubmit = (e) => {
         alert("Account created successfully! Please login.");
         navigate("/login");
       } else {
-        // --- LOGIN LOGIC ---
         const storedData = localStorage.getItem("authData");
-        
+
         if (!storedData) {
           alert("No user found. Please sign up first.");
           return;
@@ -84,11 +81,10 @@ const handleSubmit = (e) => {
         ) {
           alert("Login Successful!");
 
-          // ✅ SAFE UPDATE: Keep existing data (email) and set isLogin to true
           const updatedUser = { ...registeredData, isLogin: true };
           localStorage.setItem("authData", JSON.stringify(updatedUser));
-          
-          navigate("/"); 
+
+          navigate("/");
         } else {
           alert("Invalid username or password");
         }
@@ -162,8 +158,6 @@ const handleSubmit = (e) => {
           </div>
 
           <form className="space-y-3" onSubmit={handleSubmit}>
-            
-            {/* Username Input */}
             <div className="space-y-1">
               <p className="text-xs font-medium text-gray-600 ml-2">Username</p>
               <input
@@ -173,35 +167,41 @@ const handleSubmit = (e) => {
                 onChange={handleChange}
                 placeholder="Type your username"
                 className={`w-full px-4 py-2 text-sm bg-gray-50 border rounded-full outline-none focus:bg-white focus:ring-2 transition-all ${
-                  errors.username 
-                  ? "border-red-400 focus:border-red-400 focus:ring-red-100" 
-                  : "border-gray-200 focus:border-teal-400 focus:ring-teal-50"
+                  errors.username
+                    ? "border-red-400 focus:border-red-400 focus:ring-red-100"
+                    : "border-gray-200 focus:border-teal-400 focus:ring-teal-50"
                 }`}
               />
-              {errors.username && <p className="text-red-500 text-[10px] ml-2">{errors.username}</p>}
+              {errors.username && (
+                <p className="text-red-500 text-[10px] ml-2">
+                  {errors.username}
+                </p>
+              )}
             </div>
 
-            {/* FIX 4: Re-added the Email Input Field */}
             {isSignup && (
-                <div className="space-y-1">
-                    <p className="text-xs font-medium text-gray-600 ml-2">Email</p>
-                    <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="Type your email"
-                        className={`w-full px-4 py-2 text-sm bg-gray-50 border rounded-full outline-none focus:bg-white focus:ring-2 transition-all ${
-                            errors.email 
-                            ? "border-red-400 focus:border-red-400 focus:ring-red-100" 
-                            : "border-gray-200 focus:border-teal-400 focus:ring-teal-50"
-                        }`}
-                    />
-                    {errors.email && <p className="text-red-500 text-[10px] ml-2">{errors.email}</p>}
-                </div>
+              <div className="space-y-1">
+                <p className="text-xs font-medium text-gray-600 ml-2">Email</p>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Type your email"
+                  className={`w-full px-4 py-2 text-sm bg-gray-50 border rounded-full outline-none focus:bg-white focus:ring-2 transition-all ${
+                    errors.email
+                      ? "border-red-400 focus:border-red-400 focus:ring-red-100"
+                      : "border-gray-200 focus:border-teal-400 focus:ring-teal-50"
+                  }`}
+                />
+                {errors.email && (
+                  <p className="text-red-500 text-[10px] ml-2">
+                    {errors.email}
+                  </p>
+                )}
+              </div>
             )}
 
-            {/* Password Input */}
             <div className="space-y-1">
               <p className="text-xs font-medium text-gray-600 ml-2">Password</p>
               <div className="relative">
@@ -212,9 +212,9 @@ const handleSubmit = (e) => {
                   onChange={handleChange}
                   placeholder="Type your password"
                   className={`w-full px-4 py-2 text-sm bg-gray-50 border rounded-full outline-none focus:bg-white focus:ring-2 transition-all ${
-                    errors.password 
-                    ? "border-red-400 focus:border-red-400 focus:ring-red-100" 
-                    : "border-gray-200 focus:border-teal-400 focus:ring-teal-50"
+                    errors.password
+                      ? "border-red-400 focus:border-red-400 focus:ring-red-100"
+                      : "border-gray-200 focus:border-teal-400 focus:ring-teal-50"
                   }`}
                 />
                 <div
@@ -224,16 +224,17 @@ const handleSubmit = (e) => {
                   {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                 </div>
               </div>
-              {errors.password && <p className="text-red-500 text-[10px] ml-2">{errors.password}</p>}
+              {errors.password && (
+                <p className="text-red-500 text-[10px] ml-2">
+                  {errors.password}
+                </p>
+              )}
             </div>
 
             {isLogin && (
               <div className="flex justify-between text-xs px-2 pt-1">
                 <label className="flex gap-2 items-center cursor-pointer text-gray-600">
-                  <input
-                    type="checkbox"
-                    className="accent-teal-500 rounded"
-                  />
+                  <input type="checkbox" className="accent-teal-500 rounded" />
                   Remember me
                 </label>
                 <span className="text-teal-500 hover:text-teal-600 font-medium cursor-pointer">

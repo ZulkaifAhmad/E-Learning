@@ -2,27 +2,20 @@ import { Box, Clock, DollarSign } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { marketingArticles } from "../Articles";
 
-
-function Articles({enable = false}) {
+function Articles({ enable = false }) {
   let navigate = useNavigate();
-  
+
   return (
-    <> 
+    <>
       {marketingArticles.map((item, index) => (
         <div
-          onClick={()=>( 
-            enable ? 
-            navigate(`${item.slug}`)
-            : undefined
-          )}
+          onClick={() => (enable ? navigate(`${item.slug}`) : undefined)}
           key={index}
           className="related-blog-list-categorie rounded-2xl flex flex-col gap-2"
         >
           <img id="related-img" src={item.img} alt="girlPicture" />
 
-          <strong className="text-sm line-clamp-2">
-            {item.title}
-          </strong>
+          <strong className="text-sm line-clamp-2">{item.title}</strong>
 
           <div className="flex justify-between items-center">
             <div className="flex gap-1.5 items-center">

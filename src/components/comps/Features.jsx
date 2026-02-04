@@ -16,18 +16,18 @@ const Features = () => {
         </p>
       </div>
 
-          <div className="absolute top-45 left-10">
-            <Circle bg="bg-blue-300" w="100px" />
-          </div>
-          <div className="absolute top-40 left-36">
-            <Circle bg="bg-green-300" w="30px" />
-          </div>
-          <div className="absolute bottom-15 left-100">
-            <Circle bg="bg-green-300" w="100px" />
-          </div>
-          <div className="absolute bottom-10 left-90">
-            <Circle bg="bg-red-300" w="40px" />
-          </div>
+      <div className="absolute top-45 left-10">
+        <Circle bg="bg-blue-300" w="100px" />
+      </div>
+      <div className="absolute top-40 left-36">
+        <Circle bg="bg-green-300" w="30px" />
+      </div>
+      <div className="absolute bottom-15 left-100">
+        <Circle bg="bg-green-300" w="100px" />
+      </div>
+      <div className="absolute bottom-10 left-90">
+        <Circle bg="bg-red-300" w="40px" />
+      </div>
 
       <div className="rape-features flex justify-between items-center ">
         <div className="left w-2/3 h-102 rounded-2xl relative overflow-hidden">

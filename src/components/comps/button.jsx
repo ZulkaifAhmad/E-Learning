@@ -1,7 +1,7 @@
 import React from "react";
-import "../../App.css"
+import "../../App.css";
 
-function Button({text}) {
+function Button({ text }) {
   return (
     <button
       type="button"

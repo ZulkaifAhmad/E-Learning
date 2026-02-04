@@ -1,4 +1,14 @@
 import { assets } from "../assets/assets";
+import {
+  Code,
+  Briefcase,
+  TrendingUp,
+  PenTool,
+  Database,
+  Shield,
+  Globe,
+  BarChart,
+} from "lucide-react";
 
 export const marketingArticles = [
   {

@@ -12,21 +12,22 @@ import {
   Twitter,
   Linkedin,
   Youtube,
-  FacebookIcon,
 } from "lucide-react";
 import { assets } from "../assets/assets";
 import Articles from "./comps/Articles";
 import Sections from "./comps/Sections";
+import React from "react";
 
 function Courses_detail() {
   const { id } = useParams();
   const Navigate = useNavigate();
   const get_article = marketingArticles.filter((item) => item.slug === id);
+
   return (
     <div className="courses-details relative">
       {get_article.map((item) => (
         <div className="details-head relative z-0" key={item.slug}>
-          <div className="path flex items-center z-20 justify-start gap-1.5 absolute top-5 left-18">
+          <div className="path flex items-center z-20 justify-start gap-1.5 absolute top-5 left-5 md:left-18">
             <p
               onClick={() => Navigate(-1)}
               className="text-gray-300 cursor-pointer hover:underline"
@@ -38,22 +39,25 @@ function Courses_detail() {
           </div>
           <img src={item.img} alt={item.title} />
           <div className="rapper-details-head flex justify-center items-center flex-col gap-2 absolute z-10 w-full h-full top-0">
-            <h1 className="text-4xl text-center font-bold w-2/3">
+            <h1 className="text-2xl md:text-4xl text-center font-bold w-11/12 md:w-2/3">
               {item.title}
             </h1>
-            <p className="text-xl text-center w-2/3">{item.content}</p>
+            <p className="text-base md:text-xl text-center w-11/12 md:w-2/3">
+              {item.content}
+            </p>
           </div>
         </div>
       ))}
-      <div className="courses-details-hero-section pb-25 flex gap-8 items-start ">
-        <div className="hero-section-left w-4/6">
+
+      <div className="courses-details-hero-section pb-10 md:pb-25 flex flex-col md:flex-row gap-2 items-start relative px-5 md:px-20">
+        <div className="hero-section-left  w-2/3 md:w-3/5 ">
           <p className="text-sm bg-green-500 px-3 py-1 rounded-md text-white w-fit mb-4">
             Overview
           </p>
 
-          <div className="bg-gray-50 rounded-xl p-6 space-y-6">
-            <div className="flex items-center gap-10">
-              <div className="bg-white rounded-xl w-2/5 p-4 flex flex-col gap-2 items-center shadow-sm">
+          <div className="bg-gray-50 rounded-xl p-4 md:p-6 space-y-6">
+            <div className="flex flex-col md:flex-row items-start gap-5 md:gap-10">
+              <div className="bg-white rounded-xl w-full md:w-2/5 p-4 flex flex-col gap-2 items-center shadow-sm">
                 <p className="font-bold text-lg">4 out of 5</p>
 
                 <div className="flex gap-1">
@@ -67,7 +71,7 @@ function Courses_detail() {
                 <p className="text-sm text-gray-500">Top Rating</p>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-2 w-full">
                 {[
                   { label: "5 Stars", width: "w-full" },
                   { label: "4 Stars", width: "w-4/5" },
@@ -78,7 +82,7 @@ function Courses_detail() {
                     <p className="text-sm font-semibold text-green-900 w-16">
                       {item.label}
                     </p>
-                    <div className="h-1 w-60 bg-green-200 rounded-full">
+                    <div className="h-1 flex-1 md:w-60 bg-green-200 rounded-full">
                       <div
                         className={`${item.width} h-full bg-green-500 rounded-full`}
                       />
@@ -113,7 +117,9 @@ function Courses_detail() {
 
                 <p className="text-sm text-gray-700 leading-relaxed">
                   Class, launched less than a year ago by Blackboard co-founder
-                  Michael Chasen, integrates exclusively Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi ipsa voluptatum reiciendis cum labore ex aliquid enim hic, culpa dolore....
+                  Michael Chasen, integrates exclusively Lorem ipsum dolor sit,
+                  amet consectetur adipisicing elit. Nisi ipsa voluptatum
+                  reiciendis cum labore ex aliquid enim hic, culpa dolore....
                 </p>
 
                 {index === 0 && <hr className="border-gray-200" />}
@@ -122,12 +128,11 @@ function Courses_detail() {
           </div>
         </div>
 
-        <div className="hero-section-right w-1/4  absolute top-70 right-20 ">
-          <div className="bg-white rounded-2xl shadow-lg p-5">
+        <div className="hero-section-right w-full md:w-2/5 relative z-20 mt-10 md:-mt-24 self-start">
+          <div className="bg-white rounded-2xl shadow-lg p-5 border border-gray-100">
             {get_article.map((item, index) => (
-              <>
+              <React.Fragment key={index}>
                 <img
-                  key={index}
                   src={`${item.img}`}
                   alt="course"
                   className="w-full h-44 object-cover rounded-xl"
@@ -153,7 +158,7 @@ function Courses_detail() {
                     Buy Now
                   </button>
                 </div>
-              </>
+              </React.Fragment>
             ))}
 
             <div className="mt-6">
@@ -206,17 +211,16 @@ function Courses_detail() {
         </div>
       </div>
 
-      <div className="marketing-articles flex flex-col pt-0 pb-7 px-20 gap-3">
-            <strong className="text-xl">Marketing Articles</strong>
-            <div className="flex justify-between items-start gap-3">
-            <Articles />
-            </div>
+      <div className="marketing-articles flex flex-col pt-0 pb-7 px-5 md:px-20 gap-3">
+        <strong className="text-xl">Marketing Articles</strong>
+        <div className="flex flex-col md:flex-row justify-between items-start gap-5 md:gap-3">
+          <Articles />
+        </div>
       </div>
 
-        <div className="courses-details-sections mt-20 mb-20">
-      <Sections />
-        </div>
-
+      <div className="courses-details-sections mt-10 md:mt-20 mb-20">
+        <Sections />
+      </div>
     </div>
   );
 }

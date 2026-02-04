@@ -6,10 +6,7 @@ import { Star } from "lucide-react";
 
 function Managment() {
   return (
-    // Changed: Added 'flex-col' for mobile and 'md:flex-row' for laptop
     <div className="Managment flex flex-col md:flex-row min-h-100 items-center justify-between">
-      
-      {/* Changed: w-full for mobile, md:w-1/2 for laptop */}
       <div className="managment-text-part w-full md:w-1/2">
         <h2 id="first-man-heading" className="text-3xl font-bold">
           Class Management
@@ -62,7 +59,7 @@ function Managment() {
             />
           </div>
         </div>
-        
+
         {/* Decorative elements */}
         <div className="managment-circle absolute bottom-5 left-5">
           <Circle bg={"bg-red-300"} w={100} />

@@ -2,10 +2,7 @@ import React from "react";
 
 function Circle({ bg, w }) {
   return (
-    <div
-      className={`${bg} rounded-full`}
-      style={{ width: w, height: w }}
-    ></div>
+    <div className={`${bg} rounded-full`} style={{ width: w, height: w }}></div>
   );
 }
 

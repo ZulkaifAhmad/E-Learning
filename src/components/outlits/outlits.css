@@ -1,24 +1,20 @@
-
-
-nav{
-    padding: 0px 70px;
-    background-color: #49bbbd;
-    color: white;
+nav {
+  padding: 0px 70px;
+  background-color: #49bbbd;
+  color: white;
 }
 
-.menu_buttons button{
-    padding: 10px 20px;
-    width: 90px;
-    border-radius: 30px;
+.menu_buttons button {
+  padding: 10px 20px;
+  width: 90px;
+  border-radius: 30px;
 }
-
-
 
 .footer-container {
-  background-color: #252641; 
+  background-color: #252641;
   color: #ffffff;
   padding: 80px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   justify-content: center;
 }
@@ -39,10 +35,10 @@ nav{
   margin-bottom: 60px;
 }
 
-.footer-logo{
-    height: 70px;
-    width: 70px;
-    object-fit: contain;
+.footer-logo {
+  height: 70px;
+  width: 70px;
+  object-fit: contain;
 }
 
 .divider {
@@ -87,7 +83,7 @@ nav{
 }
 
 .subscribe-btn {
-  background-color: #49BBBD;
+  background-color: #49bbbd;
   color: white;
   border: none;
   border-radius: 50px;
@@ -133,12 +129,12 @@ nav{
   .input-group {
     flex-direction: column;
   }
-  
+
   .footer-header {
     flex-direction: column;
     gap: 15px;
   }
-  
+
   .divider {
     display: none;
   }

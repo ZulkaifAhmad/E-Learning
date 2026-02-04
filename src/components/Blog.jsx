@@ -1,17 +1,17 @@
-import Button from "./comps/button.jsx"
-import "./Blog.css"
-import { assets } from "../assets/assets.js"
-import { Eye , Box, Clock, DollarSign } from "lucide-react"
-import Articles from "./comps/Articles.jsx"
-import { marketingArticles } from "./Articles.js"
+import Button from "./comps/button.jsx";
+import "./Blog.css";
+import { assets } from "../assets/assets.js";
+import { Eye, Box, Clock, DollarSign } from "lucide-react";
+import Articles from "./comps/Articles.jsx";
+import { marketingArticles } from "./Articles.js";
 
 function Blog() {
   const blogCategories = [
     { img: assets.Watching_laptop, title: "UI/UX" },
     { img: assets.php, title: "PHP" },
     { img: assets.js, title: "Javascript" },
-    { img: assets.react, title: "React js" }
-  ]
+    { img: assets.react, title: "React js" },
+  ];
 
   const relatedBlogs = [
     {
@@ -21,7 +21,7 @@ function Blog() {
       author: "Ayesha",
       content:
         "Modern web frameworks such as React, Vue, and Angular help developers build fast and scalable user interfaces. They improve code reuse and reduce development time.",
-      views: "18k"
+      views: "18k",
     },
     {
       img: assets.js,
@@ -30,7 +30,7 @@ function Blog() {
       author: "Ahmed",
       content:
         "JavaScript is the main language of the web. A strong understanding of concepts like promises, closures, and asynchronous programming leads to better and more reliable applications.",
-      views: "26k"
+      views: "26k",
     },
     {
       img: assets.video_call,
@@ -39,17 +39,14 @@ function Blog() {
       author: "Sara",
       content:
         "Digital learning platforms are growing fast. Online classes, recorded lessons, and interactive tools are making education more flexible and accessible worldwide.",
-      views: "31k"
-    }
-  ]
-
-
-
+      views: "31k",
+    },
+  ];
 
   return (
     <div id="Blog">
-      <div className="blog-head flex justify-between items-center gap-5">
-        <div className="blog-head-left flex flex-col gap-3 w-2/5">
+      <div className="blog-head flex flex-col md:flex-row justify-between items-center gap-10 md:gap-5">
+        <div className="blog-head-left flex flex-col gap-3 w-full md:w-2/5">
           <p id="before-heading-blog" className="text-base">
             By Themadbrains in <span>inspiration</span>
           </p>
@@ -57,13 +54,14 @@ function Blog() {
             Why Swift UI Should Be on the Radar of Every Mobile Developer
           </h1>
           <p className="text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempos Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempos Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit, sed do eiusmod tempor
           </p>
           <Button text="Start Learning now" />
         </div>
-        <div className="blog-head-right w-1/2 flex justify-end">
+
+        <div className="blog-head-right w-full md:w-1/2 flex justify-center md:justify-end">
           <img src={assets.laptop} alt="" />
         </div>
       </div>
@@ -72,7 +70,7 @@ function Blog() {
         <p id="blog-list-heading" className="text-base font-bold">
           Reading Blog list
         </p>
-        <div className="blog-list-categories flex justify-between items-center flex-wrap">
+        <div className="blog-list-categories flex justify-center md:justify-between items-center flex-wrap gap-5 md:gap-0">
           {blogCategories.map((item, index) => (
             <div
               key={index}
@@ -89,16 +87,14 @@ function Blog() {
 
       <div className="related-blog">
         <p className="font-bold text-base">Related Blog</p>
-        <div className="related-blog-list flex justify-between items-start flex-wrap gap-5">
+        <div className="related-blog-list flex justify-center md:justify-between items-start flex-wrap gap-5">
           {relatedBlogs.map((item, index) => (
             <div
               key={index}
               className="related-blog-list-categorie rounded-2xl flex flex-col gap-2"
             >
               <img id="related-img" src={item.img} alt="girlPicture" />
-              <strong className="text-sm line-clamp-2">
-                {item.title}
-              </strong>
+              <strong className="text-sm line-clamp-2">{item.title}</strong>
               <div className="rape-related-img flex gap-2 items-center">
                 <img
                   src={item.authorImg}
@@ -121,17 +117,15 @@ function Blog() {
           ))}
         </div>
       </div>
-      
+
       <div className="related-blog">
         <p className="font-bold text-base">Marketing Articles</p>
-        <div className="related-blog-list marketing-blog-list flex justify-between items-start flex-wrap">
+        <div className="related-blog-list marketing-blog-list flex justify-center md:justify-between items-start flex-wrap gap-5">
           <Articles marketingArticles={marketingArticles} />
         </div>
       </div>
-
-
     </div>
-  )
+  );
 }
 
-export default Blog
+export default Blog;

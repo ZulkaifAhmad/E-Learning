@@ -22,7 +22,6 @@ function Header() {
     }
   }, [location]);
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location]);
@@ -77,7 +76,6 @@ function Header() {
         ))}
       </div>
 
-      {/* Desktop Auth Buttons - Hidden on mobile */}
       <div className="hidden md:flex items-center gap-4">
         {user ? (
           <div className="flex items-center gap-4">
@@ -119,7 +117,6 @@ function Header() {
         )}
       </div>
 
-      {/* Mobile Hamburger Button - Visible only on mobile */}
       <div className="md:hidden flex items-center">
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -129,7 +126,6 @@ function Header() {
         </button>
       </div>
 
-      {/* Mobile Dropdown Menu */}
       {isMenuOpen && (
         <div className="absolute top-20 left-0 w-full bg-white flex flex-col items-center gap-6 py-8 shadow-lg md:hidden border-t border-gray-100 animate-in slide-in-from-top-5">
           {navLinks.map((item, index) => (

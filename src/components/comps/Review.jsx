@@ -6,18 +6,14 @@ import "../../App.css";
 
 function Review() {
   return (
-    // Changed: 'flex-col' for mobile, 'md:flex-row' for laptop
     <div className="Review relative w-full flex flex-col md:flex-row items-center">
-      
-      {/* Text Part: Full width on mobile, 1/2 on laptop */}
       <div className="review-text-part flex flex-col items-start justify-start gap-4 w-full md:w-1/2 mb-10 md:mb-0">
         <div className="rape-line flex justify-start gap-5 items-center">
           <span className="line w-10 bg-gray-300"></span>
           <p className="text-sm">TESTIMONIAL</p>
         </div>
         <h1 className="text-3xl">What They Say?</h1>
-        
-        {/* Changed: w-full for mobile, md:w-2/3 for laptop */}
+
         <p className="review-P w-full md:w-2/3 text-base">
           TOTC has got more than 100k positive ratings from our users around the
           world.{" "}
@@ -31,11 +27,9 @@ function Review() {
         <Button text={"Write your assessment"} />
       </div>
 
-      {/* Image Part: Full width on mobile, 1/2 on laptop */}
       <div className="review-image-part flex relative items-center justify-center md:justify-start w-full md:w-1/2">
         <img src={assets.Girl_books} alt="girl-image" />
-        
-        {/* Review Card: Adjusted positioning for mobile */}
+
         <div className="review-message-card flex flex-col absolute bottom-0 md:bottom-10 left-1/2 md:left-10 transform -translate-x-1/2 md:translate-x-0">
           <div className="review-message flex items-center gap-3">
             <div className="review-line h-15 w-2 bg-gray-300"></div>
@@ -48,7 +42,6 @@ function Review() {
           <strong className="text-sm mt-2">Gloria rose</strong>
         </div>
 
-        {/* Circles: Hidden on mobile to prevent overflow/clutter, visible on laptop */}
         <div className="review-circle hidden md:block absolute top-30 right-50">
           <Circle bg={"bg-blue-300"} w={70} />
         </div>
