@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { marketingArticles } from "./Articles";
 import "./Blog.css";
+import { useDispatch } from "react-redux";
 import {
   Star,
   BadgeCheck,
@@ -17,8 +18,10 @@ import { assets } from "../assets/assets";
 import Articles from "./comps/Articles";
 import Sections from "./comps/Sections";
 import React from "react";
+import { addToCart } from "../redux/cart/cartSlice";
 
 function Courses_detail() {
+  let disptch = useDispatch();
   const { id } = useParams();
   const Navigate = useNavigate();
   const get_article = marketingArticles.filter((item) => item.slug === id);
@@ -154,7 +157,10 @@ function Courses_detail() {
                     11 hours left at this price
                   </p>
 
-                  <button className="w-full text-sm mt-3 bg-teal-500 hover:bg-teal-600 transition text-white font-medium py-1.5 cursor-pointer rounded-lg">
+                  <button
+                    onClick={() => disptch(addToCart({ cardSlug: item.slug }))}
+                    className="w-full text-sm mt-3 bg-teal-500 hover:bg-teal-600 transition text-white font-medium py-1.5 cursor-pointer rounded-lg"
+                  >
                     Buy Now
                   </button>
                 </div>
