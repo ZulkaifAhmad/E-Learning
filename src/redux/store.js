@@ -6,3 +6,10 @@ const store = configureStore({
         cart : cartSlice
     }
 })
+
+store.subscribe(()=> {
+    const state = store.getState()
+    console.log(state)
+})
+
+export default store;

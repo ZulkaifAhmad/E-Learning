@@ -43,6 +43,7 @@ function Header() {
     { name: "Courses", path: "/courses" },
     { name: "Blog", path: "/blog" },
     { name: "Careers", path: "/careers" },
+    { name: "Cart", path: "/cart" },
   ];
 
   if (location.pathname === "/signup" || location.pathname === "/login")

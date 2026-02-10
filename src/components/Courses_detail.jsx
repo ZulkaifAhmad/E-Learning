@@ -17,11 +17,14 @@ import { assets } from "../assets/assets";
 import Articles from "./comps/Articles";
 import Sections from "./comps/Sections";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { add } from "../redux/cartSlice.js";
 
 function Courses_detail() {
   const { id } = useParams();
   const Navigate = useNavigate();
   const get_article = marketingArticles.filter((item) => item.slug === id);
+  const dispatch = useDispatch();
 
   return (
     <div className="courses-details relative">
@@ -154,7 +157,9 @@ function Courses_detail() {
                     11 hours left at this price
                   </p>
 
-                  <button className="w-full text-sm mt-3 bg-teal-500 hover:bg-teal-600 transition text-white font-medium py-1.5 cursor-pointer rounded-lg">
+                  <button 
+                  onClick={()=> dispatch(add({slug : item.slug , count : 1}))}
+                  className="w-full text-sm mt-3 bg-teal-500 hover:bg-teal-600 transition text-white font-medium py-1.5 cursor-pointer rounded-lg">
                     Buy Now
                   </button>
                 </div>
