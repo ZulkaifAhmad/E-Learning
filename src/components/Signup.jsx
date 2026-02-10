@@ -1,7 +1,9 @@
 import { Eye, EyeOff, ArrowLeft } from "lucide-react";
 import { assets } from "../assets/assets";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function AuthPage() {
   const location = useLocation();
@@ -11,87 +13,55 @@ export default function AuthPage() {
   const isSignup = location.pathname === "/signup";
 
   const [showPassword, setShowPassword] = useState(false);
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    isLogin: false,
-  });
 
-  const [errors, setErrors] = useState({});
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
-  const validateForm = () => {
-    let newErrors = {};
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  useEffect(() => {
+    reset();
+  }, [isLogin, reset]);
 
-    if (!formData.username.trim()) {
-      newErrors.username = "Username is required";
-    } else if (formData.username.length < 3) {
-      newErrors.username = "Username must be at least 3 characters";
-    }
-
+  const onSubmit = (data) => {
     if (isSignup) {
-      if (!formData.email.trim()) {
-        newErrors.email = "Email is required";
-      } else if (!emailRegex.test(formData.email)) {
-        newErrors.email = "Invalid email format";
+      const newUserData = { ...data, isLogin: false };
+      localStorage.setItem("authData", JSON.stringify(newUserData));
+      
+      toast.success("Account created successfully! Please login.");
+      navigate("/login");
+    } else {
+      const storedData = localStorage.getItem("authData");
+
+      if (!storedData) {
+        toast.error("No user found. Please sign up first.");
+        return;
       }
-    }
 
-    if (!formData.password) {
-      newErrors.password = "Password is required";
-    } else if (formData.password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters";
-    }
+      const registeredData = JSON.parse(storedData);
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleChange = (e) => {
-    const value =
-      e.target.type === "checkbox" ? e.target.checked : e.target.value;
-    setFormData({ ...formData, [e.target.name]: value });
-
-    if (errors[e.target.name]) {
-      setErrors({ ...errors, [e.target.name]: "" });
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (validateForm()) {
-      if (isSignup) {
-        localStorage.setItem("authData", JSON.stringify(formData));
-        alert("Account created successfully! Please login.");
-        navigate("/login");
+      if (
+        registeredData.username === data.username &&
+        registeredData.password === data.password
+      ) {
+        toast.success("Login Successful!");
+        navigate("/");
       } else {
-        const storedData = localStorage.getItem("authData");
-
-        if (!storedData) {
-          alert("No user found. Please sign up first.");
-          return;
-        }
-
-        const registeredData = JSON.parse(storedData);
-
-        if (
-          registeredData.username === formData.username &&
-          registeredData.password === formData.password
-        ) {
-          alert("Login Successful!");
-          navigate("/");
-        } else {
-          alert("Invalid username or password");
-        }
+        toast.error("Invalid username or password");
       }
-      setFormData({ username: "", email: "", password: "", isLogin: false });
     }
   };
 
   return (
     <div className="h-screen w-full flex items-center justify-center bg-gray-50 overflow-hidden relative">
+      <Toaster 
+        position="top-center" 
+        reverseOrder={false}
+        containerStyle={{ zIndex: 99999 }} 
+      />
+
       <button
         onClick={() => navigate(-1)}
         className="absolute top-4 left-4 md:top-8 md:left-8 flex items-center gap-2 text-gray-500 hover:text-teal-600 transition-colors z-10"
@@ -135,36 +105,31 @@ export default function AuthPage() {
                 className={`absolute top-1 bottom-1 w-[calc(50%-4px)] bg-white rounded-md shadow-sm transition-all duration-300 ease-in-out ${isLogin ? "left-1" : "left-[calc(50%+2px)]"}`}
               ></div>
               <button
-                onClick={() => {
-                  navigate("/login");
-                  setErrors({});
-                }}
+                onClick={() => navigate("/login")}
                 className={`w-1/2 flex items-center justify-center text-xs font-semibold z-10 transition-colors ${isLogin ? "text-teal-600" : "text-gray-500"}`}
               >
                 Login
               </button>
               <button
-                onClick={() => {
-                  navigate("/signup");
-                  setErrors({});
-                }}
+                onClick={() => navigate("/signup")}
                 className={`w-1/2 flex items-center justify-center text-xs font-semibold z-10 transition-colors ${isSignup ? "text-teal-600" : "text-gray-500"}`}
               >
                 Signup
               </button>
             </div>
 
-            <form className="space-y-3" onSubmit={handleSubmit}>
+            <form className="space-y-3" onSubmit={handleSubmit(onSubmit)}>
               <div className="space-y-1">
                 <label className="text-xs font-medium text-gray-600 ml-1">
                   Username
                 </label>
                 <input
                   type="text"
-                  name="username"
-                  value={formData.username}
-                  onChange={handleChange}
                   placeholder="Enter username"
+                  {...register("username", { 
+                    required: "Username is required",
+                    minLength: { value: 3, message: "Username must be at least 3 characters" }
+                  })}
                   className={`w-full px-4 py-2 text-sm bg-gray-50 border rounded-lg outline-none focus:bg-white focus:ring-2 transition-all ${
                     errors.username
                       ? "border-red-400 focus:border-red-400 focus:ring-red-100"
@@ -173,7 +138,7 @@ export default function AuthPage() {
                 />
                 {errors.username && (
                   <p className="text-red-500 text-[10px] ml-1">
-                    {errors.username}
+                    {errors.username.message}
                   </p>
                 )}
               </div>
@@ -185,10 +150,14 @@ export default function AuthPage() {
                   </label>
                   <input
                     type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
                     placeholder="Enter email"
+                    {...register("email", { 
+                      required: "Email is required",
+                      pattern: {
+                        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                        message: "Invalid email format"
+                      }
+                    })}
                     className={`w-full px-4 py-2 text-sm bg-gray-50 border rounded-lg outline-none focus:bg-white focus:ring-2 transition-all ${
                       errors.email
                         ? "border-red-400 focus:border-red-400 focus:ring-red-100"
@@ -197,7 +166,7 @@ export default function AuthPage() {
                   />
                   {errors.email && (
                     <p className="text-red-500 text-[10px] ml-1">
-                      {errors.email}
+                      {errors.email.message}
                     </p>
                   )}
                 </div>
@@ -210,10 +179,11 @@ export default function AuthPage() {
                 <div className="relative">
                   <input
                     type={showPassword ? "text" : "password"}
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
                     placeholder="••••••••"
+                    {...register("password", { 
+                      required: "Password is required",
+                      minLength: { value: 6, message: "Password must be at least 6 characters" }
+                    })}
                     className={`w-full px-4 py-2 text-sm bg-gray-50 border rounded-lg outline-none focus:bg-white focus:ring-2 transition-all ${
                       errors.password
                         ? "border-red-400 focus:border-red-400 focus:ring-red-100"
@@ -230,7 +200,7 @@ export default function AuthPage() {
                 </div>
                 {errors.password && (
                   <p className="text-red-500 text-[10px] ml-1">
-                    {errors.password}
+                    {errors.password.message}
                   </p>
                 )}
               </div>

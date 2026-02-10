@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { add, remove } from '../redux/cartSlice.js'
 import { marketingArticles } from './Articles'
+// 1. Import Toast hooks
+import toast, { Toaster } from 'react-hot-toast'
 import {
     ShoppingBag,
     Trash2,
@@ -22,9 +24,25 @@ export default function Cart() {
         return article ? { ...article, count: item.count } : null
     }).filter(Boolean)
 
-
     const total = cartDetails.reduce((acc, item) => acc + (Number(item.price) * item.count), 0)
 
+    // --- CHECKOUT LOGIC ---
+    const handleCheckout = () => {
+        const storedData = localStorage.getItem("authData");
+        const user = storedData ? JSON.parse(storedData) : null;
+
+        if (user && user.isLogin) {
+            toast.success("Proceeding to checkout...");
+            // Small delay to let the toast show before navigating
+            setTimeout(() => {
+                navigate('/checkout');
+            }, 1000);
+        } else {
+            toast.error("Please login to complete your purchase");
+            navigate('/login');
+        }
+    };
+    // ----------------------
 
     if (cartDetails.length === 0) {
         return (
@@ -47,9 +65,11 @@ export default function Cart() {
         )
     }
 
-
     return (
-        <div className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6 lg:px-8 relative">
+            {/* 2. Add Toaster */}
+            <Toaster position="top-center" reverseOrder={false} />
+
             <div className="max-w-6xl mx-auto">
                 <h1 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
                     <ShoppingBag className="w-6 h-6 text-[#49bbbd]" />
@@ -58,7 +78,6 @@ export default function Cart() {
                 </h1>
 
                 <div className="lg:grid lg:grid-cols-12 lg:gap-8">
-
 
                     <div className="lg:col-span-8 space-y-4">
                         {cartDetails.map((item) => (
@@ -71,7 +90,6 @@ export default function Cart() {
                                         className="h-full w-full object-cover"
                                     />
                                 </div>
-
 
                                 <div className="mt-4 sm:mt-0 sm:ml-5 flex-1 flex flex-col justify-between">
                                     <div className="flex justify-between items-start">
@@ -86,7 +104,6 @@ export default function Cart() {
                                             ${(Number(item.price) * item.count).toLocaleString()}
                                         </p>
                                     </div>
-
 
                                     <div className="flex justify-between items-center mt-4">
                                         <div className="flex items-center bg-gray-50 rounded-lg border border-gray-200">
@@ -106,9 +123,8 @@ export default function Cart() {
                                             </button>
                                         </div>
 
-
                                         <button
-                                            onClick={() => dispatch(remove({ slug: item.slug }))} // Assuming remove handles full delete if logic exists, otherwise customize
+                                            onClick={() => dispatch(remove({ slug: item.slug }))}
                                             className="flex items-center text-xs font-medium text-gray-400 hover:text-red-500 transition gap-1"
                                         >
                                             <Trash2 className="w-4 h-4" />
@@ -119,7 +135,6 @@ export default function Cart() {
                             </div>
                         ))}
                     </div>
-
 
                     <div className="lg:col-span-4 mt-8 lg:mt-0">
                         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 sticky top-6">
@@ -140,8 +155,9 @@ export default function Cart() {
                                 </div>
                             </div>
 
+                            {/* 3. Attach handleCheckout here */}
                             <button
-                                // onClick={() => navigate('/checkout')}
+                                onClick={handleCheckout}
                                 className="w-full mt-6 py-3 bg-[#49bbbd] text-white font-semibold rounded-lg shadow-md hover:bg-[#3daeb0] transition flex items-center justify-center gap-2"
                             >
                                 <CreditCard className="w-4 h-4" />

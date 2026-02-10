@@ -19,6 +19,7 @@ import Sections from "./comps/Sections";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { add } from "../redux/cartSlice.js";
+import toast, { Toaster } from "react-hot-toast";
 
 function Courses_detail() {
   const { id } = useParams();
@@ -28,6 +29,8 @@ function Courses_detail() {
 
   return (
     <div className="courses-details relative">
+      <Toaster position="top-center" reverseOrder={false} />
+
       {get_article.map((item) => (
         <div className="details-head relative z-0" key={item.slug}>
           <div className="path flex items-center z-20 justify-start gap-1.5 absolute top-5 left-5 md:left-18">
@@ -157,9 +160,13 @@ function Courses_detail() {
                     11 hours left at this price
                   </p>
 
-                  <button 
-                  onClick={()=> dispatch(add({slug : item.slug , count : 1}))}
-                  className="w-full text-sm mt-3 bg-teal-500 hover:bg-teal-600 transition text-white font-medium py-1.5 cursor-pointer rounded-lg">
+                  <button
+                    onClick={() => {
+                      dispatch(add({ slug: item.slug, count: 1 }));
+                      toast.success("Course added to cart");
+                    }}
+                    className="w-full text-sm mt-3 bg-teal-500 hover:bg-teal-600 transition text-white font-medium py-1.5 cursor-pointer rounded-lg"
+                  >
                     Buy Now
                   </button>
                 </div>

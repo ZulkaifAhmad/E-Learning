@@ -1,14 +1,14 @@
 import { assets } from "../../assets/assets.js";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { User, LogOut, Menu, X } from "lucide-react"; // Import Menu and X icons
+import { User, LogOut, Menu, X } from "lucide-react"; 
 import "./outlits.css";
 
 function Header() {
   const navigate = useNavigate();
   const location = useLocation();
   const [user, setUser] = useState(null);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State for mobile menu
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
 
   useEffect(() => {
     const storedData = localStorage.getItem("authData");

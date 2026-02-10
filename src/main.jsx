@@ -14,6 +14,7 @@ import Courses_detail from './components/Courses_detail.jsx'
 import {  Provider } from 'react-redux'
 import store from './redux/store.js'
 import Cart from './components/Cart.jsx'
+import Checkout from './components/Checkout.jsx'
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path : "/cart" , 
         element : <Cart />
+      },
+      {
+        path : "/checkout" , 
+        element : <Checkout />
       },
     ]
   }
