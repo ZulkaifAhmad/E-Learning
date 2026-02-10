@@ -12,36 +12,30 @@ import {
 } from 'lucide-react';
 
 export default function Checkout() {
-  // 1. Fetch Cart from Redux
   const { cart } = useSelector((state) => state);
   const navigate = useNavigate();
   
-  // 2. Local State for User Data
   const [userData, setUserData] = useState(null);
 
-  // 3. Fetch User Data from LocalStorage on mount
   useEffect(() => {
     const storedData = localStorage.getItem("authData");
     if (storedData) {
       setUserData(JSON.parse(storedData));
     } else {
-      // If no user found, kick them back to login
       toast.error("Please login first");
       navigate('/login');
     }
   }, [navigate]);
 
-  // 4. Handle Order Confirmation
   const handleConfirmOrder = () => {
     toast.success("Order placed successfully! We will reach out to you via email.");
     
-    // Optional: Redirect to home after 2 seconds
     setTimeout(() => {
       navigate('/');
     }, 2500);
   };
 
-  if (!userData) return null; // Prevent flickering before redirect
+  if (!userData) return null; 
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
@@ -49,7 +43,6 @@ export default function Checkout() {
 
       <div className="max-w-3xl w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
         
-        {/* Header Section */}
         <div className="bg-[#49bbbd] px-8 py-6 flex items-center justify-between">
             <div className="text-white">
                 <h1 className="text-2xl font-bold flex items-center gap-2">
@@ -68,7 +61,6 @@ export default function Checkout() {
 
         <div className="p-8 space-y-8">
             
-            {/* Section 1: User Information */}
             <div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
                     <User className="w-5 h-5 text-[#49bbbd]" />
@@ -98,7 +90,6 @@ export default function Checkout() {
                 </div>
             </div>
 
-            {/* Section 2: Cart Items (Slug & Count Only) */}
             <div>
                 <h2 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
                     <ShoppingCart className="w-5 h-5 text-[#49bbbd]" />

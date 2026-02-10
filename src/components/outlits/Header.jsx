@@ -68,7 +68,7 @@ function Header() {
               `text-base tracking-wide transition-colors ${
                 isActive
                   ? "underline decoration-green-400 decoration-2 underline-offset-5"
-                  : "text-white hover:text-teal-900" // Adjusted default text color for visibility on white bg
+                  : "text-white hover:text-teal-900" 
               }`
             }
           >

@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { add, remove } from '../redux/cartSlice.js'
 import { marketingArticles } from './Articles'
-// 1. Import Toast hooks
 import toast, { Toaster } from 'react-hot-toast'
 import {
     ShoppingBag,
@@ -26,14 +25,12 @@ export default function Cart() {
 
     const total = cartDetails.reduce((acc, item) => acc + (Number(item.price) * item.count), 0)
 
-    // --- CHECKOUT LOGIC ---
     const handleCheckout = () => {
         const storedData = localStorage.getItem("authData");
         const user = storedData ? JSON.parse(storedData) : null;
 
         if (user && user.isLogin) {
             toast.success("Proceeding to checkout...");
-            // Small delay to let the toast show before navigating
             setTimeout(() => {
                 navigate('/checkout');
             }, 1000);
@@ -42,7 +39,6 @@ export default function Cart() {
             navigate('/login');
         }
     };
-    // ----------------------
 
     if (cartDetails.length === 0) {
         return (
@@ -67,7 +63,6 @@ export default function Cart() {
 
     return (
         <div className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6 lg:px-8 relative">
-            {/* 2. Add Toaster */}
             <Toaster position="top-center" reverseOrder={false} />
 
             <div className="max-w-6xl mx-auto">
@@ -155,7 +150,6 @@ export default function Cart() {
                                 </div>
                             </div>
 
-                            {/* 3. Attach handleCheckout here */}
                             <button
                                 onClick={handleCheckout}
                                 className="w-full mt-6 py-3 bg-[#49bbbd] text-white font-semibold rounded-lg shadow-md hover:bg-[#3daeb0] transition flex items-center justify-center gap-2"
