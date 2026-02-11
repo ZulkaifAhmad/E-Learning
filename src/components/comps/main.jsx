@@ -8,7 +8,7 @@ function Main() {
     <div className="main flex flex-col md:flex-row items-center justify-between px-6 py-8 md:px-0 md:py-0">
       <div className="parts text-part w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left mb-16 md:mb-0">
         <h1 className="text-4xl w-full  md:text-5xl font-bold text-slate-900">
-          <span className="text-teal-500">Studing</span> Online is now
+          <span className="text-teal-500">Studying</span> Online is now
           much easier
         </h1>
 
